@@ -1,0 +1,212 @@
+@import "settings";
+@import "hero-header";
+@import "authorization";
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout start												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#page,
+#page #content,
+.outer.intro-holder{
+	height: 100%;
+	background: @baseCream;
+	overflow: hidden;
+}
+#page{
+	position: relative;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout end												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	intro start												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.outer.intro-holder{
+	position: relative;
+	background: @baseCream url(../images/ornament-bottom.png) no-repeat 50% calc(~"100% - 50px");
+	background-size: 200px 55px;
+	.inner,
+	.mask{
+		.centered(0%, 50%, 0%, -50%);
+	}
+	.inner{
+		z-index: 5;
+		h1{
+			font-family: @exmouth;
+			text-align: center;
+		}
+		h2{
+			margin-top: -10px;
+			padding: 0 28%;
+		}
+		.small-title{
+			display: block;
+			text-align: center;
+			font-weight: 300;
+			margin-bottom: 20px;
+			font-size: 1.125em;
+		}
+		.btn-large{ margin: 60px auto 5px; }
+		a.under-btn{
+			display: block;
+			text-align: center;
+			text-transform: lowercase;
+			font-weight: 300;
+			&:hover{
+				text-decoration: underline;
+			}
+			&.touch-hover-end{
+				text-decoration: none;
+				color: @darkGrey;
+			}
+			&.touch-hover-start{
+				text-decoration: underline;
+				color: @rustGreen;
+			}
+		}
+	}
+	.mask{
+		width: 200px;
+		height: 40%;
+		z-index: 10;
+		img{
+			width: auto;
+			height: 100%;
+			float: left;
+		}
+	}
+	.mask.right{
+		left: auto;
+		right: 0;
+		img{ float: right; }
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	intro end												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	footer start												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#footer{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 20;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	footer end												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	adaptive start											*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media only screen and(max-width: 1024px){
+	
+	.outer.intro-holder{
+		.inner{
+			h2{ padding: 0 15%; }
+		}
+	}
+
+}
+@media only screen and(max-width: 768px){
+	
+	.outer.intro-holder{
+		.inner{
+			h2{ padding: 0 10%; }
+		}
+		.mask{ display: none; }
+	}
+
+}
+@media only screen and(max-width: 640px) and(orientation: portrait){
+	
+	.outer.intro-holder{
+		background: @baseCream url(../images/ornament-bottom.png) no-repeat 50% calc(~"100% - 50px");
+		background-size: 130px 35px;
+		.inner{
+			h1{ font-size: 4.5em; }
+			h2{ font-size: 1em; }
+			.small-title{ display: none; }
+		}
+	}
+
+}
+
+@media only screen and(max-width: 500px){
+	
+	.outer.intro-holder{
+		.inner{
+			h1{ font-size: 3.5em; }
+			h2{
+				margin-top: -5px;
+				font-size: 0.875em;
+			}
+			.btn-large{ margin: 40px auto 10px; }
+		}
+	}
+	.btn-large{
+		width: 180px;
+		height: 40px;
+		a{ line-height: 40px; }
+	}
+	#footer{
+		small{
+			display: none;
+		}
+		.feedback-btn{
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			a{
+				display: block;
+				line-height: 40px;
+				font-size: 1.25em;
+				color: @baseCream;
+				.transition;
+				&:hover{
+					color: @rustGreen;
+				}
+			}
+		}
+	}
+
+}
+@media only screen and(max-width: 400px){
+	
+	.outer.intro-holder{
+		.inner{
+			margin-top: 20px;
+			h1{ font-size: 3em; }
+			h2{
+				margin-top: 0px;
+				font-size: 0.875em;
+			}
+			.small-title{ display: none; }
+			.btn-large{ margin: 40px auto 10px; }
+		}
+	}
+
+}
+@media only screen and(max-width: 360px){
+	
+	.outer.intro-holder{
+		.inner{
+			h1{ font-size: 2.75em; }
+			h2{
+				padding: 0 20px;
+			}
+			.small-title{ display: none; }
+			.btn-large{ margin: 20px auto 10px; }
+		}
+	}
+
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	adaptive end											*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+

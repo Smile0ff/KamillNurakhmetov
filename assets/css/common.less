@@ -1,0 +1,924 @@
+@import "settings";
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout start												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#page,
+#content,
+#header,
+#menu,
+#footer,
+.outer,
+.inner,
+.grid,
+.row,
+.col{
+	width: 100%;
+	height: auto;
+}
+#page{
+	height: auto;
+	min-height: 100%;
+	background: @baseCream;
+}
+#content.sticky-footer{
+	height: auto;
+	min-height: 100%;
+	padding-bottom: 60px;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout end												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	header start											*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#header{
+	height: 100px;
+	position: relative;
+	z-index: 20;
+	background: @darkGrey;
+	&:before,
+	&:after{
+		display: block;
+		width: 120px;
+		height: 50px;
+		position: absolute;
+		top: 106px;
+		left: 0;
+		content: "";
+		background: transparent url("../images/ornament-left.png") no-repeat 50% 50%;
+		background-size: 100px 43px;
+	}
+	&:after{
+		left: auto;
+		right: 0;
+		content: "";
+		background: transparent url("../images/ornament-right.png") no-repeat 50% 50%;
+		background-size: 100px 43px;
+	}
+	.logo-holder{
+		display: block;
+		width: 60px;
+		height: 60px;
+		margin: 20px;
+		float: left;
+		a.logo{
+			display: block;
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			background: @darkBrown;
+			box-shadow: 1px 1px 3px 0 @darkGrey;
+			position: relative;
+			font-size: 1em;
+			overflow: hidden;
+			&:before,
+			&:after{
+				display: block;
+				text-align: center;
+				font-family: @exmouth;
+				font-size: 1.75em;
+				color: @darkGrey;
+				position: absolute;
+				top: 9px;
+				left: 3px;
+				content: "K";
+			}
+			&:after{
+				top: 21px;
+				left: 13px;
+				content: "N";
+				color: @baseCream;
+			}
+		}
+	}
+}
+#authorization-widget-holder{
+	width: ~"calc(100% - 600px)";
+	height: 100%;
+	float: right;
+	background: @darkGrey;
+	.authorization{
+		display: none;
+		width: 100%;
+		height: 100%;
+		text-align: right;
+		&.buttons{
+			display: block;
+		}
+		a{
+			display: inline-block;
+			vertical-align: top;
+			line-height: 100px;
+			white-space: -1;
+		}
+		span{
+			display: inline-block;
+			font-size: .875em;
+			text-transform: uppercase;
+			color: @baseCream;
+			line-height: 100px;
+			padding: 0 20px;
+			cursor: pointer;
+			.transition;
+			&.icon{
+				.borderBox;
+				border-left: 1px solid darken(@darkGrey, 10%);
+				font-size: 1.5em;
+				background: transparent;
+			}
+			&:hover{
+				color: @rustGreen;
+				&.icon{
+					background: @rustGreen;
+					color: @baseCream;
+				}
+			}
+		}
+		.btn-small{
+			margin: 25px 25px 0 0;
+			float: right;
+			cursor: pointer;
+			& > span{
+				display: block;
+				line-height: 50px;
+				padding: 0;
+				&:hover{
+					color: @baseCream;
+				}
+			}
+		}
+		&.mobile{
+			text-align: right;
+			a{
+				display: inline-block;
+				color: @baseCream;
+				white-space: -1;
+				line-height: 40px;
+				.borderBox;
+				padding: 0 20px;
+				.transition;
+				&:first-child{
+					border-right: 1px solid darken(@darkGrey, 10%);
+				}
+				&:hover,
+				&.touch-hover-start{
+					color: @rustGreen;
+				}
+				&.touch-hover-end{
+					color: @baseCream;
+				}
+			}
+		}
+	}
+	&.logged-in{
+		.mobile,
+		.buttons{
+			display: none;
+		}
+		.office{
+			display: block;
+		}
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	header end											*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	menu start												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#menu{
+	width: 500px;
+	height: 40px;
+	margin: 30px 0;
+	float: left;
+	overflow: hidden;
+	ul{
+		text-align: left;
+	}
+	li:not(.logo-holder){
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 20px;
+		word-spacing: -1;
+		a{
+			font-weight: 300;
+			font-size: 1.125em;
+			line-height: 40px;
+			color: @baseCream;
+			.transition;
+			&:hover{
+				color: @rustGreen;
+			}
+		}
+		&.touch-hover-end a{
+			color: @baseCream;
+		}
+		&.touch-hover-start a{
+			color: @rustGreen;
+		}
+	}
+	li.logo-holder{
+		display: none;
+		vertical-align: middle;
+		margin: 0 30px;
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	menu end												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	button start											*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+*[class^="btn-"]{
+	margin: 0 auto;
+	a, span{
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		background: @darkBrown;
+		border-radius: 3px;
+		box-shadow: 1px 2px 3px 0 fade(@darkGrey, 50%);
+		line-height: 50px;
+		text-transform: uppercase;
+		color: @baseCream;
+		.transition;
+		overflow: hidden;
+		&:after{
+			display: block;
+			width: 100%;
+			height: 3px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			content: "";
+			.transition;
+			background: darken(@darkBrown, 10%);
+		}
+		&:hover{
+			background: @rustGreen;
+			box-shadow: 1px 1px 3px 0 lighten(@darkGrey, 10%);
+		}
+		&:hover:after{
+			background: transparent;
+		}
+	}
+	&.touch-hover-end > a,
+	&.touch-hover-end > span{
+		background: @darkBrown;
+		box-shadow: 1px 2px 3px 0 fade(@darkGrey, 50%);
+		&:after{
+			background: darken(@darkBrown, 10%);
+		}
+	}
+	&.touch-hover-start > a,
+	&.touch-hover-start > span{
+		background: @rustGreen;
+		box-shadow: 1px 1px 3px 0 lighten(@darkGrey, 10%);
+		&:after{
+			background: transparent;
+		}
+	}
+}
+.btn-price{ width: 230px; }
+.btn-large{ width: 220px; }
+.btn-small{ width: 180px; }
+
+.btn-price{
+	a{
+		display: block;
+		&:before{
+			display: block;
+			width: 81px;
+			height: 50px;
+			float: right;
+			content: attr(data-price);
+			border-left: 1px solid darken(@darkBrown, 10%);
+			.borderBox;
+		}
+		&:hover:before{
+			border-left: 1px solid darken(@rustGreen, 10%);
+		}
+	}
+	&.touch-hover-end a:before{
+		border-left: 1px solid darken(@darkBrown, 10%);
+	}
+	&.touch-hover-start a:before{
+		border-left: 1px solid darken(@rustGreen, 10%);
+	}
+
+	a.mobile-buy{
+		display: none;
+		& > span{
+			display: block;
+			width: ~"calc(100% - 81px)";
+			box-shadow: none;
+			font-size: 1.5em;
+			&:after{
+				display: none;
+			}
+		}
+		&:hover span{
+			background: @rustGreen;
+		}
+	}
+	&.touch-hover-end a.mobile-buy > span{
+		background: @darkBrown;
+	}
+	&.touch-hover-start a.mobile-buy > span{
+		background: @rustGreen;
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	button end												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	forms start												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+form{
+	display: block;
+	width: 100%;
+}
+.field-holder{
+	width: 100%;
+	height: 60px;
+	position: relative;
+	overflow: hidden;
+}
+.placeholder{
+	font-family: @openSans;
+	font-size: 1em;
+	color: @darkGrey;
+}
+::-webkit-input-placeholder{ .placeholder }
+::-moz-placeholder{ .placeholder }
+:-moz-placeholder{ .placeholder }
+:-ms-input-placeholder{ .placeholder }
+
+input[type=text],
+input[type=email],
+input[type=tel],
+input[type=url],
+input[type=password]{
+	display: block;
+	width: 100%;
+	border: none;
+	padding: 0;
+	margin: 0;
+	font-family: @openSans;
+	font-weight: normal;
+	font-size: .875em;
+	text-indent: 10px;
+	background: transparent;
+	&.toggle-input{
+		height: 40px;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		color: @darkGrey;
+		.transition;
+		opacity: 0;
+	}
+	& + label,
+	& + label.error + label{
+		display: block;
+		width: 100%;
+		height: 40px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding-top: 20px;
+		overflow: hidden;
+		& > .icon-holder{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			.transition;
+			transform: translateX(0%);
+			.icon{
+				display: block;
+				width: 18px;
+				height: 18px;
+				position: absolute;
+				right: 0;
+				bottom: 2px;
+				color: @darkGrey;
+				font-size: 1.125em;
+				.transition;
+				transform-origin: 0% 100%;
+				transform: rotate(0deg);
+			}
+		}
+		& > .title{
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			line-height: 40px;
+			font-size: .875em;
+			font-weight: bold;
+			color: @darkGrey;
+			.transition;
+			transform: translateX(10px);
+		}
+		&:after{
+			display: block;
+			width: 100%;
+			height: 2px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			background: @darkGrey;
+			content: "";
+			.transition;
+			transform: translateX(95%) translateY(0);
+			overflow: hidden;
+		}
+	}
+	&:hover + label,
+	&:hover + label.error + label{
+		.icon{
+			transform: rotate(-90deg);
+		}
+	}
+	&:focus,
+	&.filled{
+		opacity: 1;
+		& + label,
+		& + label.error + label{
+			.icon-holder{
+				transform: translateX(-100%);
+				.icon{
+					transform: rotate(-90deg);
+					color: @rustGreen;
+				}
+			}
+			.title{
+				font-size: .75em;
+				color: @rustGreen;
+				transform: translateX(0px) translateY(-20px);
+			}
+			&:after{
+				transform: translateX(0%);
+				background: @rustGreen;
+			}
+		}
+	}
+	& + label.error{
+		display: inline-block;
+		width: auto;
+		height: auto;
+		left: auto;
+		right: 0;
+		&:after{
+			display: none;
+		}
+	}
+}
+label.error{
+	display: inline-block;
+	width: auto;
+	height: auto;
+	font-family: @openSans;
+	font-size: .75em;
+	text-align: left;
+	color: @errorColor;
+	padding: 5px 10px 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: auto;
+	line-height: 20px;
+	z-index: 5;
+}
+
+
+input[type=radio]{
+	display: none;
+	& + label{
+		display: block;
+		width: 89.473684%;
+		height: 40px;
+		margin: 0 5.263158% 20px;
+		.radio{
+			display: block;
+			width: 100%;
+			max-width: 140px;
+			height: 100%;
+			float: left;
+			border-radius: 3px;
+			border: 2px solid @baseCream;
+			background: transparent;
+			font-family: @openSans;
+			font-weight: normal;
+			font-size: .875em;
+			line-height: 40px;
+			color: @baseCream;
+			text-transform: uppercase;
+			text-align: center;
+			.borderBox;
+			.transition;
+			cursor: pointer;
+			&:hover{
+				border: 2px solid @rustGreen;
+				color: @rustGreen;
+			}
+		}
+		.price{
+			display: block;
+			width: ~"calc(100% - 140px)";
+			float: left;
+			font-size: 1em;
+			color: @baseCream;
+			text-align: right;
+			line-height: 40px;
+		}
+	}
+	&:focus + label .radio,
+	&:checked + label .radio{
+		border: 2px solid @rustGreen;
+		color: @rustGreen;
+	}
+}
+
+
+textarea{
+	display: block;
+	width: 100%;
+	min-height: 80px;
+	max-height: 80px;
+	border: 1px solid @darkBrown;
+	background: @baseCream;
+	box-shadow: inset 1px 1px 3px fade(@darkGrey, 50%);
+	border-radius: 3px;
+	.borderBox;
+	resize: none;
+	font-family: @openSans;
+	font-size: .875em;
+	color: @darkGrey;
+	padding: 10px;
+	.transition;
+	&:hover,
+	&:focus{
+		border: 1px solid @rustGreen;
+		box-shadow: inset 1px 1px 3px fade(@rustGreen, 50%);
+	}
+}
+input[type=hidden]{
+	display: none;
+}
+button[type=submit]{
+	display: block;
+	width: 180px;
+	height: 50px;
+	background: transparent;
+	border: none;
+	border-radius: 3px;
+	& > span{
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		background: @darkBrown;
+		border-radius: 3px;
+		box-shadow: 1px 2px 3px 0 fade(@darkGrey, 50%);
+		line-height: 50px;
+		font-size: .875em;
+		text-transform: uppercase;
+		color: @baseCream;
+		.transition;
+		overflow: hidden;
+		&:after{
+			display: block;
+			width: 100%;
+			height: 3px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			content: "";
+			.transition;
+			background: darken(@darkBrown, 10%);
+		}
+		&:hover{
+			background: @rustGreen;
+			box-shadow: 1px 1px 3px 0 lighten(@darkGrey, 10%);
+		}
+		&:hover:after{
+			background: transparent;
+		}
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	forms end												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	footer start												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#footer{
+	height: 40px;
+	position: relative;
+	background: @darkGrey;
+	overflow: hidden;
+	small{
+		display: block;
+		text-align: center;
+		font-size: 0.75em;
+		color: @baseCream;
+		font-weight: 300;
+		line-height: 40px;
+		a{
+			font-size: inherit;
+			font-weight: 300;
+			color: @baseCream;
+			&:hover{
+				color: @rustGreen;
+				text-decoration: underline;
+			}
+		}
+	}
+	.cheers-logo{
+		display: none;
+		width: 40px;
+		height: 40px;
+		margin: 0 auto;
+		a{
+			display: block;
+			width: 100%;
+			height: 100%;
+			& > img{
+				display: block;
+				width: 30px;
+				height: 30px;
+				margin: 5px;
+			}
+		}
+	}
+	.feedback-btn{
+		width: 40px;
+		height: 40px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		a{
+			display: block;
+			line-height: 40px;
+			font-size: 1.25em;
+			color: @baseCream;
+			.transition;
+			&:hover{
+				color: @rustGreen;
+			}
+		}
+	}
+}
+#footer.sticky{ margin-top: -40px; }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	footer end												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	loader start											*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.loader-holder{
+	display: none;
+	width: 60px;
+	height: 60px;
+	.centered;
+	border-radius: 50%;
+	background: @darkBrown;
+	&:before{
+		display: block;
+		width: ~"calc(100% - 10px)";
+		height: ~"calc(100% - 10px)";
+		margin: 5px;
+		border-radius: 50%;
+		background: @baseCream;
+		content: "";
+		overflow: hidden;
+	}
+	& > span{
+		display: block;
+		width: 5px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		margin-left: -2.5px;
+		background: @baseCream;
+		animation: spin 1s @easingFunction 0s infinite;
+	}
+	& > span:last-child{
+		animation: spin 1s @easingFunction .3s infinite;
+	}
+	&.active{
+		display: block;
+	}
+}
+
+@keyframes spin{
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	loader end												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	landscape fallback start								*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.orientation-landscape-holder{
+	display: none;
+	width: 100%;
+	.centered(0%, 50%, 0, -50%);
+	text-align: center;
+	overflow: hidden;
+	span.fa{
+		display: block;
+		font-size: 8em;
+		color: @rustGreen;
+	}
+	span.text{
+		font-size: 1.125em;
+		color: @darkGrey;
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	landscape fallback end								*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	adaptive common start								*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media only screen and(max-width: 800px){
+	
+	#header{
+		height: 140px;
+		position: relative;
+		z-index: 20;
+		background: transparent;
+		overflow: hidden;
+		&:before,
+		&:after{
+			display: none;
+		}
+		.logo-holder{
+			margin: 0;
+			float: none;
+			position: absolute;
+			top: 50px;
+			left: 20px;
+		}
+	}
+	#authorization-widget-holder{
+		width: 100%;
+		height: 40px;
+		float: none;
+		.authorization{
+			&.buttons{
+				display: none;
+			}
+			&.mobile{
+				display: block;
+			}
+			a{
+				display: inline-block;
+				vertical-align: top;
+				line-height: 40px;
+				white-space: -1;
+			}
+			span{
+				line-height: 40px;
+			}
+		}
+		&.logged-in{
+			.mobile{
+				display: none;
+			}
+		}
+	}
+	
+	#menu{
+		width: ~"calc(100% - 100px)";
+		height: auto;
+		margin: 0;
+		float: none;
+		position: absolute;
+		top: 50px;
+		left: 100px;
+		li:not(.logo-holder){
+			a{
+				line-height: 60px;
+				color: @darkGrey;
+			}
+			&.touch-hover-end a{
+				color: @darkGrey;
+			}
+		}
+	}
+
+}
+@media only screen and(max-width: 640px) and(orientation: portrait){
+	
+	#header{
+		.logo-holder{
+			width: 50px;
+			height: 50px;
+			margin: 0;
+			float: none;
+			position: absolute;
+			top: 60px;
+			left: 20px;
+			a.logo{
+				&:before,
+				&:after{
+					font-size: 1.5em;
+					top: 7px;
+					left: 3px;
+				}
+				&:after{
+					top: 19px;
+					left: 11px;
+				}
+			}
+		}
+	}
+	
+	#menu{
+		top: 60px;
+		left: 90px;
+		ul{
+			text-align: left;
+		}
+		li:not(.logo-holder){
+			margin: 0 10px;
+			a{
+				font-size: 1em;
+			}
+		}
+	}
+
+	#footer{
+		small{
+			display: none;
+		}
+		.cheers-logo{
+			display: block;
+		}
+	}
+
+}
+@media only screen and(max-width: 640px) and(orientation: landscape){
+	
+	#page{
+		height: 100%;
+		padding: 0;
+		margin: 0;
+		.orientation-landscape-holder{ display: block; }
+	}
+	#header,
+	#footer,
+	#content,
+	#content.sticky-footer{
+		display: none;
+	}
+
+}
+@media only screen and(max-width: 500px) and(orientation: portrait){
+	
+	#header{
+		height: 160px;
+		.logo-holder{
+			display: block;
+			width: 100%;
+			left: 0;
+			a.logo{
+				width: 50px;
+				height: 50px;
+				margin: 0 auto;
+			}
+		}
+	}
+	#menu{
+		width: 100%;
+		top: 120px;
+		left: 0;
+		ul{
+			text-align: center;
+		}
+	}
+
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	adaptive common end									*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
