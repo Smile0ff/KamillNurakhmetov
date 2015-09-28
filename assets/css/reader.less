@@ -87,6 +87,7 @@ body.no-scroll{ overflow: hidden; }
 	max-width: 1200px;
 	height: auto;
 	margin: 0 auto;
+	overflow: hidden;
 	.separator{
 		display: block;
 		width: 100px;
@@ -209,15 +210,41 @@ body.no-scroll{ overflow: hidden; }
 	z-index: 20;
 	background: @darkGrey;
 	overflow: hidden;
-	p{
-		line-height: 40px;
-		text-align: right;
-		padding-right: 10px;
-		font-size: 1em;
-		color: @baseCream;
-		& > span{
-			font-size: inherit;
-			color: @darkBrown;
+	.read-percentage{
+		width: 220px;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		margin-left: -110px;
+		overflow: hidden;
+		p{
+			line-height: 40px;
+			text-align: right;
+			padding-right: 10px;
+			font-size: 1em;
+			color: @baseCream;
+			& > span{
+				font-size: inherit;
+				color: @darkBrown;
+			}
+		}
+	}
+	.arrow{
+		width: 40px;
+		height: 40px;
+		float: left;
+		overflow: hidden;
+		& > a{
+			display: block;
+			line-height: 40px;
+			color: @baseCream;
+			.transition;
+			&:hover{
+				color: @rustGreen;
+			}
+		}
+		&.right{
+			float: right;
 		}
 	}
 }
@@ -228,6 +255,12 @@ body.no-scroll{ overflow: hidden; }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	adaptive start											*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media only screen and(max-width: 800px){
+
+	#header{
+		background: @darkGrey;
+	}
+}
 @media only screen and(max-width: 640px) and(orientation: portrait){
 	
 	#contents-holder{

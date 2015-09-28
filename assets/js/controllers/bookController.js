@@ -22,7 +22,7 @@
 	}
 	function _events(){
 		this.el.on("click", ".review-button", $.proxy(this.toggleReviews, this));
-		this.reviewHolder.on("click", ".close-button", $.proxy(this.closeReviews, this))
+		this.reviewHolder.on("click", $.proxy(this.closeReviews, this));
 	}
 	function toggleReviews(e){
 		e.preventDefault();
@@ -35,9 +35,16 @@
 		this.reviewHolder.find("#response-holder").empty();
 		this.reviewBookID.val(bookID);
 		this.reviewHolder.addClass("active");
+		$("html, body").addClass("no-scroll");
 	}
 	function closeReviews(e){
-		this.reviewHolder.removeClass("active");
+		var target = $(e.target);
+
+		if($(e.target).closest(".inner-holder").length <= 0 || $(e.target).hasClass("close-button")){
+			this.reviewHolder.removeClass("active");
+			$("html, body").removeClass("no-scroll");
+		}
+		return false;
 	}
 
 	module.exports = BookController;

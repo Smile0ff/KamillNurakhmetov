@@ -27,16 +27,17 @@
 		this.reader = new ReaderService({ path: "php/reader.php" });
 
 		this._events();
+
+		this.countScrollPercent();
 	}
 	function _events(){
 		this.wrapper
 			.on("click touchstart", ".tool", $.proxy(this.handleReader, this))
 			.on("click touchstart", ".contents-item", $.proxy(this.handleContents, this));
 
-		$(root).on({
-			"scroll": $.proxy(this.countScrollPercent, this),
-			"resize": $.proxy(this.countScrollPercent, this)
-		})
+		$(root)
+			.on("scroll", $.proxy(this.countScrollPercent, this))
+			.on("resize", $.proxy(this.countScrollPercent, this));
 	}
 	function handleReader(e){
 		e.preventDefault();
@@ -87,8 +88,7 @@
 		this.setPercentage();
 	}
 	function setPercentage(){
-		this.scrollPercents = this.scrollPercents || 0;
-		this.footer.html("<p>прочитано <span>"+ this.scrollPercents +"%</span></p>");
+		this.footer.find(".read-percentage").html("<p>прочитано <span>"+ this.scrollPercents +"%</span></p>");
 	}
 
 	module.exports = ReaderController;
