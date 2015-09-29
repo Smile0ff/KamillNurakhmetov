@@ -24,6 +24,7 @@
 	function initialize(){
 		this.wrapper = $("#page");
 		this.footer = $("#footer");
+		this.arrows = $(".arrow");
 		this.reader = new ReaderService({ path: "php/reader.php" });
 
 		this._events();
@@ -75,6 +76,8 @@
 
 			self.wrapper.removeClass("loading contents-active");
 			self.el.html(contents.chapter);
+			self.footer.find(".arrow.left > a").attr("href", contents.prev_link);
+			self.footer.find(".arrow.right > a").attr("href", contents.next_link);
 			target.addClass("active");
 			$("body").removeClass("no-scroll");
 		});
