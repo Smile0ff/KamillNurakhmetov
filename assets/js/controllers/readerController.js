@@ -27,8 +27,6 @@
 		this.reader = new ReaderService({ path: "php/reader.php" });
 
 		this._events();
-
-		this.countScrollPercent();
 	}
 	function _events(){
 		this.wrapper
@@ -82,10 +80,12 @@
 		});
 	}
 	function countScrollPercent(e){
+		console.log(e);
 		var scrollY = $(root).scrollTop();
 
 		this.scrollPercents = Math.round(scrollY / (this.wrapper.height() - $(root).innerHeight()) * 100);
 		this.setPercentage();
+		return false;
 	}
 	function setPercentage(){
 		this.footer.find(".read-percentage").html("<p>прочитано <span>"+ this.scrollPercents +"%</span></p>");
