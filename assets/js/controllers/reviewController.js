@@ -1,57 +1,41 @@
-(function($, root){
+"use strict";
 
-	"use strict";
+export default class ReviewController{
 
-	var ReviewService = require("../services/reviewService");
+    constructor(){
+        this.el = $("#review-form");
+        this.responseHolder = $("#response-holder");
 
-	function ReviewController(){
-		this.el = $("#review-form");
-		this.initialize.apply(this, arguments);
-	}
-	ReviewController.prototype = {
-		reviewService: {},
-		responseHolder: [],
-		initialize: initialize,
-		_events: _events,
-		handleReview: handleReview,
-		handleSuccess: handleSuccess,
-		handleError: handleError
-	}
+        this.UIevents();
+    }
+    UIevents(){
+        this.el.on("submit", $.proxy(this.handleReview, this));
+    }
+    handleReview(e){
+        e.preventDefault();
 
-	function initialize(){
-		this._events();
-		this.el.validate();
+        if(!this.el.valid()) return;
+        let formData = this.el.serializeArray(),
+            path = this.el.attr("action");
 
-		this.responseHolder = $("#response-holder");
-		this.reviewService = new ReviewService();
-	}
-	function _events(){
-		this.el.on("submit", $.proxy(this.handleReview, this));
+        $.ajax({
+            url: path,
+            type: "POST",
+            data: formData
+        })
+        .done((response) => {
+            response = JSON.parse(response);
 
-		$(root)
-			.on("review-success", $.proxy(this.handleSuccess, this))
-			.on("review-error", $.proxy(this.handleError, this));
-	}
-	function handleReview(e){
-		e.preventDefault();
+            this.el.addClass("hide");
+            this.responseHolder.html("<h3 class='success'>"+ response.message +"</h3>");
+            this.el[0].reset();
+        })
+        .fail((error) => {
+            this.el.addClass("hide");
+            this.responseHolder.html("<h3 class='error'>"+ error.responseText +"</h3>");
+            this.el[0].reset();
+        });
 
-		if(!this.el.valid()) return;
-		var path = this.el.attr("action"),
-			formData = this.el.serializeArray();
+    }
 
-		this.reviewService._send(path, formData);
-	}
-	function handleSuccess(e, response){
-		this.el.addClass("hide");
-		this.responseHolder.html("<h3 class='success'>"+ response.message +"</h3>");
-		this.el[0].reset();
-	}
-	function handleError(e, message){
-		this.el.addClass("hide");
-		this.responseHolder.html("<h3 class='error'>"+ message +"</h3>");
-		this.el[0].reset();
-	}
-
-	module.exports = ReviewController;
-
-})(jQuery, window);
+}

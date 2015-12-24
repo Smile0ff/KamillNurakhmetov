@@ -1,34 +1,21 @@
-(function($, root){
+"use strict";
 
-	"use strict";
+export default class StoriesController{
 
-	function StoriesController(){
-		this.el = $("#stories-list");
-		this.initialize.apply(this, arguments);
-	}
-	StoriesController.prototype = {
-		reviewHolder: [],
-		inputStorieId: [],
-		initialize: initialize,
-		_events: _events,
-		openReviews: openReviews,
-		closeReviews: closeReviews
-	}
+    constructor(){
+        this.el = $("#stories-list");
+        this.reviewHolder = $("#review-holder");
+        this.inputStorieId = $("#review-storie-id");
 
-	function initialize(){
-		this.reviewHolder = $("#review-holder");
-		this.inputStorieId = $("#review-storie-id");
-		this._events();
-	}
-	function _events(){
-		this.el.on("click", ".review-button", $.proxy(this.openReviews, this));
+        this.UIevents();
+    }
+    UIevents(){
+        this.el.on("click", ".review-button", $.proxy(this.openReviews, this));
 		this.reviewHolder.on("click", ".close-button", $.proxy(this.closeReviews, this));
-	}
-	function openReviews(e){
-		if(this.reviewHolder.hasClass("active")) return;
-		e.preventDefault();
-
-		var storieID = $(e.currentTarget).data("storie-id");
+    }
+    openReviews(e){
+        if(this.reviewHolder.hasClass("active")) return;
+		let storieID = $(e.currentTarget).data("storie-id");
 		this.reviewHolder
 			.addClass("active")
 			.find(".storie-id-" + storieID)
@@ -39,12 +26,12 @@
 		this.reviewHolder.find("#review-form").removeClass("hide");
 		this.reviewHolder.find("#response-holder").empty();
 		this.inputStorieId.val(storieID);
-	}
-	function closeReviews(e){
-		e.preventDefault();
-		this.reviewHolder.removeClass("active");
-	}
 
-	module.exports = StoriesController;
+        return false;
+    }
+    closeReviews(e){
+        this.reviewHolder.removeClass("active");
 
-})(jQuery, window);
+        return false;
+    }
+}

@@ -1,6 +1,6 @@
-@import "settings";
+@import "settings.less";
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	layout start												*/
+/*	layout start							  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #page,
 #content,
@@ -35,6 +35,52 @@ p.no-content{
 	padding: 80px 40px;
 	text-align: center;
 	color: @rustGreen;
+}
+.seo-text{
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto 0px;
+    padding-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+    .inner{
+        height: 100px;
+        position: relative;
+        overflow: hidden;
+        &:after{
+            display: block;
+            width: 100%;
+            height: 80px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background: linear-gradient(0deg, @baseCream, transparent);
+            content: "";
+            overflow: hidden;
+        }
+    }
+    p{
+        padding: 0 20px;
+        text-align: left;
+        color: @darkGrey;
+    }
+    #expand-seo-text{
+        display: block;
+        width: 200px;
+        float: right;
+        padding-right: 20px;
+        color: @rustGreen;
+        text-align: right;
+        cursor: pointer;
+    }
+    &.active{
+        .inner{
+            height: auto;
+            &:after{
+                display: none;
+            }
+        }
+    }
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	layout end												*/
@@ -228,6 +274,9 @@ p.no-content{
 		}
 		&.touch-hover-start a{
 			color: @rustGreen;
+		}
+	    &.active a{
+		    color: @rustGreen;
 		}
 	}
 	li.logo-holder{
@@ -771,7 +820,7 @@ button[type=submit]{
 /*	adaptive common start								*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 @media only screen and(max-width: 800px){
-	
+
 	#header{
 		height: 140px;
 		position: relative;
@@ -817,7 +866,7 @@ button[type=submit]{
 			}
 		}
 	}
-	
+
 	#menu{
 		width: ~"calc(100% - 100px)";
 		height: auto;
@@ -839,7 +888,7 @@ button[type=submit]{
 
 }
 @media only screen and(max-width: 640px) and(orientation: portrait){
-	
+
 	#header{
 		.logo-holder{
 			width: 50px;
@@ -863,7 +912,7 @@ button[type=submit]{
 			}
 		}
 	}
-	
+
 	#menu{
 		top: 60px;
 		left: 90px;
@@ -889,7 +938,7 @@ button[type=submit]{
 
 }
 @media only screen and(max-width: 640px) and(orientation: landscape){
-	
+
 	#page{
 		height: 100%;
 		padding: 0;
@@ -905,7 +954,7 @@ button[type=submit]{
 
 }
 @media only screen and(max-width: 500px) and(orientation: portrait){
-	
+
 	#header{
 		height: 160px;
 		.logo-holder{
@@ -932,4 +981,3 @@ button[type=submit]{
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	adaptive common end									*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-

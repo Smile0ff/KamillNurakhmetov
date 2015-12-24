@@ -33,47 +33,50 @@
 	<link rel="icon" type="image/png" href="assets/images/favicons/160x160.png">
 	<link rel="icon" type="image/png" href="assets/images/favicons/192x192.png"-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="build/css/feedback.bundle.min.css">
+	<link rel="stylesheet" href="build/css/browsers.bundle.min.css">
 </head>
 <body>
 	<div id="page">
-		<main id="content">
-			<section class="outer" id="feedback-holder">
-				<h1>Feedback</h1>
-				<div class="inner">
-					<form action="#" method="POST" id="feedback-form">
-						<div class="field-holder">
-							<input type="text" name="feedback[name]" value="" id="feedback-name" class="toggle-input" data-rule-required="true" data-msg-required="Вы не назвались">
-							<label for="feedback-name">
-								<span class="icon-holder"><span class="icon fa fa-pencil"></span></span>
-								<span class="title">Как я могу к вам обращаться?</span>
-							</label>
-						</div>
-						<div class="field-holder">
-							<input type="text" name="feedback[theme]" value="" id="feedback-theme" class="toggle-input" data-rule-required="true" data-msg-required="Вы не указали тему">
-							<label for="feedback-theme">
-								<span class="icon-holder"><span class="icon fa fa-pencil"></span></span>
-								<span class="title">О чем хотите говорить?</span>
-							</label>
-						</div>
-						<div class="field-holder area">
-							<textarea name="feedback[msg]" id="feedback-msg" placeholder="Ваше сообщение" data-rule-required="true" data-msg-required="Вы забыли написать сообщение"></textarea>
-						</div>
-						<button type="submit">
-							<span>Написать</span>
-						</button>
-					</form>
-				</div>
-				<div class="back-link">
-					<a href="#"><span class="fa fa-long-arrow-left"></span>Вернуться назад</a>
-				</div>
-			</section>
-		</main>
+        <main id="content">
+            <section class="outer support-holder">
+                <div class="inner">
+                    <div class="logo-holder">
+                        <a href="#">
+                            <img src="assets/images/logo.png" alt="logo">
+                        </a>
+                    </div>
+                    <h1>Kamill Nurakhmetov</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <ul>
+                        <li>
+                            <span class="fa fa-chrome"></span>
+                            <p>Google Chrome latest</p>
+                            <a href="#">обновить</a>
+                        </li>
+                        <li>
+                            <span class="fa fa-opera"></span>
+                            <p>Opera Foundation latest</p>
+                            <a href="#">обновить</a>
+                        </li>
+                        <li>
+                            <span class="fa fa-firefox"></span>
+                            <p>Mozilla Firefox latest</p>
+                            <a href="#">обновить</a>
+                        </li>
+                        <li>
+                            <span class="fa fa-safari"></span>
+                            <p>Apple Safari latest</p>
+                            <a href="#">обновить</a>
+                        </li>
+                        <li>
+                            <span class="fa fa-internet-explorer"></span>
+                            <p>Microsoft Internet explorer 9+</p>
+                            <a href="#">обновить</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
 	</div>
-	<script src="jspm_packages/system.js"></script>
-    <script src="jspm.config.js"></script>
-    <script>
-        System.import("assets/js/app/feedback.js");
-    </script>
 </body>
 </html>

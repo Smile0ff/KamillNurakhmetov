@@ -58,7 +58,7 @@
 		&.active{
 			display: block;
 		}
-		.book-info{
+		.title-info{
 			&:after{
 				display: block;
 				width: 560px;
@@ -179,6 +179,26 @@
 			}
 		}
 	}
+    &.no-form{
+        .inner{
+            height: 100%;
+        }
+        .review-form-holder{
+            display: none;
+        }
+    }
+}
+
+#review-holder{
+    &.on-stories{
+        .review-align-holder{
+            width: 600px;
+            float: right;
+            height: 100%;
+            background: @darkGrey;
+            overflow: hidden;
+        }
+    }
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	review end												*/
@@ -188,7 +208,7 @@
 /*	adaptive start											*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 @media only screen and(max-width: 800px){
-	
+
 	#review-holder{
 		width: 100%;
 		& > .inner.inner-holder{

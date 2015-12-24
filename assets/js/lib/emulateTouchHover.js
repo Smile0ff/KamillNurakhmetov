@@ -1,34 +1,26 @@
-(function($, root){
+"use strict";
 
-	"use strict";
+import {isMobile} from "./isMobile";
 
-	function TouchHover(){
-		this.el = $(".touch-hover");
-		this.initialize.apply(this, arguments);
-	}
-	TouchHover.prototype = {
-		initialize: initialize,
-		_events: _events,
-		handleTouchStart: handleTouchStart,
-		handleTouchEnd: handleTouchEnd
-	}
+const IS_MOBILE = isMobile();
 
-	function initialize(){
-		if(!root.isMobile) return;
-		this._events();
-	}
-	function _events(){
-		this.el
+class TouchHover{
+    constructor(){
+        if(!IS_MOBILE) return;
+        this.el = $(".touch-hover");
+        this.UIevents();
+    }
+    UIevents(){
+        this.el
 			.on("touchstart", this.handleTouchStart)
 			.on("touchend", this.handleTouchEnd);
-	}
-	function handleTouchStart(e){
-		$(this).removeClass("touch-hover-end").addClass("touch-hover-start");
-	}
-	function handleTouchEnd(e){
-		$(this).removeClass("touch-hover-start").addClass("touch-hover-end");
-	}
+    }
+    handleTouchStart(e){
+        $(this).removeClass("touch-hover-end").addClass("touch-hover-start");
+    }
+    handleTouchEnd(e){
+        $(this).removeClass("touch-hover-start").addClass("touch-hover-end");
+    }
+}
 
-	module.exports = new TouchHover;
-
-})(jQuery, window);
+export default new TouchHover();

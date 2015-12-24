@@ -1,4 +1,4 @@
-@import "settings";
+@import "components/common.less";
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	layout start												*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -31,12 +31,10 @@
 /*	feedback start											*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #feedback-holder{
-	h1{
-		font-family: @openSans;
-		color: @darkGrey;
-		font-size: 1.5em;
-		padding-top: 80px;
-	}
+    h1{
+        font-size: 3.5em;
+        padding: 80px 0 20px;
+    }
 	form{
 		width: 100%;
 		max-width: 800px;
@@ -101,7 +99,7 @@
 /*	adaptive start											*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 @media only screen and(max-width: 800px){
-	
+
 	#feedback-holder{
 		form{
 			width: 90%;
@@ -111,7 +109,7 @@
 
 }
 @media only screen and(max-width: 640px){
-	
+
 	#page{
 		height: auto;
 	}

@@ -1,16 +1,10 @@
-(function(root){
+"use strict";
 
-	"use strict";
+import jquery from "jquery";
+import touchHover from "../lib/emulateTouchHover";
+import ReaderController from "../controllers/readerController";
 
-	root.jQuery = root.$ = require("jquery");
-	require("jquery-ui");
-	require("../lib/mobileDetector");
-	require("../lib/emulateTouchHover");
+$(function(){
 
-	var ReaderController = require("../controllers/readerController");
-
-	$(function(){
-		new ReaderController();
-	});
-
-})(window);
+    new ReaderController();
+});

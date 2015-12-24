@@ -36,7 +36,7 @@
 	<link rel="stylesheet" href="build/css/reader.bundle.min.css">
 </head>
 <body>
-	<div id="page">
+	<div id="page" data-path="php/reader.php">
 		<header id="header">
 			<div class="icon-button tool contents">
 				<span class="fa fa-list-ul"></span>
@@ -115,6 +115,10 @@
 			</div>
 		</footer>
 	</div>
-	<script src="build/js/reader.min.js"></script>
+	<script src="jspm_packages/system.js"></script>
+    <script src="jspm.config.js"></script>
+    <script>
+        System.import("assets/js/app/reader.js");
+    </script>
 </body>
 </html>

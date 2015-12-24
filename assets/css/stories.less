@@ -1,11 +1,26 @@
-@import "settings";
-@import "reviews";
-@import "authorization";
+@import "components/common.less";
+@import "components/reviews.less";
+@import "components/authorization.less";
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	layout start												*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #content{
-	padding-top: 80px;
+    h1{
+        font-size: 3.5em;
+        padding: 40px 0 20px;
+    }
+	.text-holder{
+	  width: 100%;
+	  max-width: 1200px;
+	  margin: 0 auto;
+	  height: auto;
+	  overflow: hidden;
+	  p{
+	 	 color: @darkGrey;
+	 	 text-align: center;
+	 	 padding: 0 0 60px;
+	  }
+	}
 }
 .grid{
 	max-width: 1160px;
@@ -47,7 +62,7 @@
 	height: 60px;
 	margin: 0 auto;
 	.sort-panel{
-		width: ~"calc(100% - 300px)";
+		width: ~"calc(100% - 350px)";
 		float: left;
 		ul{
 			display: block;
@@ -77,6 +92,9 @@
 					color: @rustGreen;
 				}
 			}
+            &.active a{
+                color: @rustGreen;
+            }
 		}
 	}
 	.btn-small.subscribe{
@@ -109,7 +127,7 @@
 		}
 	}
 	.subscribed-holder{
-		width: 300px;
+		width: 350px;
 		height: 40px;
 		float: right;
 		a{
@@ -131,8 +149,51 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	stories start											*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.stories-list-holder{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    .filters-holder{
+        width: 200px;
+        float: left;
+        margin-right: 20px;
+        overflow: hidden;
+        ul, li, li > a{
+            display: block;
+            overflow: hidden;
+        }
+        li{
+            margin-bottom: 10px;
+            a{
+                width: 100%;
+                background: @darkBrown;
+                text-align: center;
+                line-height: 50px;
+                color: @baseCream;
+                border-radius: 3px;
+                transition: all .5s ease;
+            }
+            & > a:hover,
+            &.active a{
+                background: @rustGreen;
+            }
+        }
+    }
+}
 #stories-list{
+    width: ~"calc(100% - 220px)";
+    float: left;
 	.stories-holder{
+        width: 48.97959183673469%;
+        padding-top: 48.97959183673469%;
+        margin-left: 2.040816326530612%;
+        &:nth-child(3n+2){
+            margin: 0 0 20px 2.040816326530612%;
+        }
+        &:nth-child(odd){
+            margin-left: 0;
+        }
 		.stats-panel{
 			width: 100%;
 			margin: 10px 10px 0;
@@ -162,7 +223,8 @@
 			position: absolute;
 			.centered(0, 50%, 0, -50%);
 			overflow: hidden;
-			h2{
+			.story-title{
+                display: block;
 				color: @baseCream;
 				padding: 20px 20px 0;
 			}
@@ -175,6 +237,19 @@
 				background-size: 60px auto;
 				overflow: hidden;
 			}
+            .btn-small{
+                a{
+                    position: relative;
+                    &:before{
+                        display: none;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+            }
 			.review-button{
 				display: block;
 				text-align: center;
@@ -187,20 +262,23 @@
 			}
 		}
 		&.disabled{
-			.inner{
-				&:before{
-					display: block;
-					width: 100%;
-					height: 100%;
-					position: absolute;
-					top: 0;
-					left: 0;
-					z-index: 10;
-					background: fade(@darkGrey, 90%);
-					content: "";
-					overflow: hidden;
-				}
-			}
+			.btn-small{
+                a{
+                    background: @darkGrey;
+                    pointer-events: none;
+                    box-shadow: none;
+                    color: @darkGrey;
+                    user-select: none;
+                    &:before{
+                        display: block;
+                        color: @rustGreen;
+                        font-size: 2em;
+                    }
+                    &:after{
+                        background: @darkGrey;
+                    }
+                }
+            }
 		}
 	}
 }
@@ -214,7 +292,7 @@
 .pagination-holder{
 	width: 100%;
 	max-width: 1160px;
-	margin: 0 auto 20px;
+	margin: 40px auto 20px;
 	overflow: hidden;
 	ul{
 		display: block;
@@ -257,89 +335,89 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	adaptive start											*/
+/*	adaptive start							  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-@media only screen and(max-width: 800px){
+@media only screen and(max-width: 960px){
 
-	#content{
-		padding-top: 20px;
-	}
-	
-	.grid{
-		max-width: auto;
-		.col{
-			width: 47%;
-			padding-top: 47%;
-			margin: 0 0 20px 2%;
-			&:nth-child(3n+2){
-				margin: 0 0 20px 2%;
-			}
-		}
-	}
+    .stories-list-holder{
+        .filters-holder{
+            width: 100%;
+            margin-bottom: 20px;
+            li{
+                display: block;
+                width: 23%;
+                float: left;
+                margin: 0 1%;
+            }
+        }
+    }
 
-	.sort-panel-holder{
-		width: 96%;
+    #stories-list{
+        width: 100%;
+        float: none;
+        padding: 0 1%;
+        box-sizing: border-box;
+    }
+
+    .sort-panel-holder{
+		width: 98%;
 		max-width: auto;
 	}
 
 	.pagination-holder{
-		width: 96%;
+		width: 98%;
 		max-width: auto;
 	}
 
 }
-@media only screen and(max-width: 640px) and(orientation: portrait){
-	
-	.sort-panel-holder{
-		height: auto;
-		margin: 20px auto;
-		position: relative;
-		overflow: hidden;
-		.sort-panel{
-			li{
-				display: block;
-				margin-right: 0;
-				& > a{
-					text-align: left;
-					line-height: 30px;
-				}
-			}
-		}
-		.btn-small.subscribe{
-			float: none;
-			position: absolute;
-			top: 50%;
-			right: 0;
-			margin-top: -20px;
-		}
-	}
 
-	.grid{
-		max-width: auto;
-		.col{
-			width: 96%;
-			padding-top: 96%;
-			margin: 0 2% 20px;
-			&:nth-child(3n+2){
-				margin: 0 2% 20px;
-			}
-		}
-	}
+@media only screen and(max-width: 800px){
+
+    #content{
+        h1{
+            padding-top: 0;
+        }
+    }
+
+    .sort-panel-holder{
+        display: none;
+    }
+
+}
+
+@media only screen and(max-width: 640px) and(orientation: portrait){
+
+    .stories-list-holder{
+        .filters-holder{
+            width: 100%;
+            margin-bottom: 10px;
+            li{
+                display: block;
+                width: 48%;
+                float: left;
+                margin: 0 1% 10px;
+            }
+        }
+    }
+
+    #stories-list{
+        .grid{
+    		max-width: auto;
+
+    	}
+        .stories-holder{
+            width: 100%;
+            padding-top: 100%;
+            margin: 0 0% 20px;
+            &:nth-child(3n+2),
+            &:nth-child(odd){
+                margin: 0 0% 20px;
+            }
+        }
+    }
 
 }
 @media only screen and(max-width: 400px) and(orientation: portrait){
-	
-	.grid{
-		max-width: auto;
-		.col{
-			width: 96%;
-			padding-top: 96%;
-			margin: 0 2% 10px;
-			&:nth-child(3n+2){
-				margin: 0 2% 10px;
-			}
-		}
-	}
 
 	.pagination-holder{
 		margin-bottom: 10px;
@@ -356,7 +434,7 @@
 
 }
 @media only screen and(max-width: 360px) and(orientation: portrait){
-		
+
 	#content,
 	#header,
 	#footer{
@@ -388,4 +466,3 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	adaptive end											*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-

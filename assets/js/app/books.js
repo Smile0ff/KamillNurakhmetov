@@ -1,27 +1,19 @@
-(function(root){
+"use strict";
 
-	"use strict";
+import jquery from "jquery";
+import validate from "jquery-validation";
+import touchHover from "../lib/emulateTouchHover";
+import ToggleInput from "../lib/ToggleInput";
+import AuthController from "../controllers/authController";
+import BookController from "../controllers/bookController";
+import ReviewController from "../controllers/reviewController";
 
-	root.jQuery = root.$ = require("jquery");
-	require("jquery-ui");
-	require("jquery-validation");
-	require("../lib/mobileDetector");
-	require("../lib/emulateTouchHover");
+$(function(){
 
-	var ToggleInput = require("../lib/ToggleInput"),
-		AuthController = require("../controllers/authController"),
-		BookController = require("../controllers/bookController"),
-		ReviewController = require("../controllers/reviewController");
+    new BookController();
+    new ReviewController();
+    new ToggleInput();
+    new AuthController();
 
-	$("form").each(function(){
-		$(this).validate();
-	});
-
-	$(function(){
-		new BookController();
-		new ReviewController();
-		new ToggleInput();
-		new AuthController();
-	});
-
-})(window);
+    $("form").validate();
+});

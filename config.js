@@ -1,16 +1,8 @@
-(function(){
-
-	"use strict";
-
-	var _config = {
-		baseDir: "",
-		jsDir: "assets/js/",
-		cssDir: "assets/css/",
-		fontsDir: "assets/fonts/",
-		imgDir: "assets/images/",
-		outDir: "build/"
-	};
-
-	module.exports = _config;
-
-})();
+module.exports = {
+	base: "",
+	js: "assets/js/",
+	css: "assets/css/",
+	font: "assets/fonts/",
+	img: "assets/images/",
+	out: "build/"
+}

@@ -66,12 +66,13 @@
 			</div>
 		</header>
 		<main id="content" class="sticky-footer">
+            <h1>Books</h1>
 			<section class="grid" id="book-list">
 				<div class="row">
 					<article class="col book-holder">
 						<figure><img src="build/images/book-covers/blood-type.jpg" alt="Группа крови здравого смысла"></figure>
 						<div class="info">
-							<h2>Группа крови здравого смысла</h2>
+							<span class="book-title">Группа крови здравого смысла</span>
 							<time datetime="2015-07-22">издание 2015 года</time>
 							<ul>
 								<li><span><span class="fa fa-reply"></span>5 рецензий</span></li>
@@ -88,7 +89,7 @@
 					<article class="col book-holder">
 						<figure><img src="build/images/book-covers/void-auction.jpg" alt="Аукцион пустоты"></figure>
 						<div class="info">
-							<h2>Аукцион пустоты</h2>
+                            <span class="book-title">Аукцион пустоты</span>
 							<time datetime="2015-07-22">издание 2015 года</time>
 							<ul>
 								<li><span><span class="fa fa-reply"></span>5 рецензий</span></li>
@@ -108,7 +109,7 @@
 					<article class="col book-holder">
 						<figure><img src="build/images/book-covers/blood-type.jpg" alt="Группа крови здравого смысла"></figure>
 						<div class="info">
-							<h2>Группа крови здравого смысла</h2>
+							<span class="book-title">Группа крови здравого смысла</span>
 							<time datetime="2015-07-22">издание 2015 года</time>
 							<ul>
 								<li><span><span class="fa fa-reply"></span>5 рецензий</span></li>
@@ -126,7 +127,7 @@
 					<article class="col book-holder">
 						<figure><img src="build/images/book-covers/void-auction.jpg" alt="Аукцион пустоты"></figure>
 						<div class="info">
-							<h2>Аукцион пустоты</h2>
+							<span class="book-title">Аукцион пустоты</span>
 							<time datetime="2015-07-22">издание 2015 года</time>
 							<ul>
 								<li><span><span class="fa fa-reply"></span>5 рецензий</span></li>
@@ -404,6 +405,10 @@
 		<small>© 2015. All rights reserved. Created and Designed by <a href="#">CHEERS! Unlimited</a> web-agency.</small>
 		<div class="feedback-btn"><a href="#" class="fa fa-envelope-o" title="отправить письмо"></a></div>
 	</footer>
-	<script src="build/js/books.min.js"></script>
+	<script src="jspm_packages/system.js"></script>
+    <script src="jspm.config.js"></script>
+    <script>
+        System.import("assets/js/app/books.js");
+    </script>
 </body>
 </html>

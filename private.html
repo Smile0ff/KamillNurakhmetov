@@ -155,7 +155,7 @@
 									</label>
 								</div>
 							</div>
-							
+
 							<button type="submit" class="touch-hover">
 								<span>Изменить</span>
 							</button>
@@ -346,6 +346,10 @@
 		<small>© 2015. All rights reserved. Created and Designed by <a href="#">CHEERS! Unlimited</a> web-agency.</small>
 		<div class="feedback-btn"><a href="#" class="fa fa-envelope-o" title="отправить письмо"></a></div>
 	</footer>
-	<script src="build/js/private.min.js"></script>
+    <script src="jspm_packages/system.js"></script>
+    <script src="jspm.config.js"></script>
+    <script>
+        System.import("assets/js/app/private.js");
+    </script>
 </body>
 </html>

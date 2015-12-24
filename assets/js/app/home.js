@@ -1,23 +1,12 @@
-(function(root){
+"use strict";
 
-	"use strict";
+import jquery from "jquery";
+import validate from "jquery-validation";
+import EmulateTouch from "../lib/EmulateTouchHover";
+import ToggleInput from "../lib/ToggleInput";
+import AuthController from "../controllers/AuthController";
 
-	root.jQuery = root.$ = require("jquery");
-	require("jquery-ui");
-	require("jquery-validation");
-	require("../lib/mobileDetector");
-	require("../lib/emulateTouchHover");
-
-	var ToggleInput = require("../lib/ToggleInput"),
-		AuthController = require("../controllers/authController");
-
-	$("form").each(function(){
-		$(this).validate();
-	});
-
-	$(function(){
-		new ToggleInput();
-		new AuthController();
-	});
-
-})(window);
+$(function(){
+    new ToggleInput();
+    new AuthController();
+});

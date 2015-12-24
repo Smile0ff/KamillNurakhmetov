@@ -1,4 +1,4 @@
-@import "settings";
+@import "components/common.less";
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	layout start												*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -98,13 +98,14 @@ body{ height: auto; }
 	}
 	h2{
 		text-transform: uppercase;
-		text-align: left;
+		text-align: center;
 		padding: 0 20px 0;
 	}
 	p{
 		text-align: left;
 		color: @darkGrey;
 		padding: 20px 20px 0;
+	    font-size: 1em;
 	}
 }
 #page.mode-active{
@@ -262,7 +263,7 @@ body{ height: auto; }
 	}
 }
 @media only screen and(max-width: 640px) and(orientation: portrait){
-	
+
 	#contents-holder{
 		width: 100%;
 		.outer{

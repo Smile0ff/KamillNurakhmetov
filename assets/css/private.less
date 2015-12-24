@@ -1,8 +1,27 @@
-@import "settings";
-@import "authorization";
+@import "components/common.less";
+@import "components/authorization.less";
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	layout start												*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.payment-msg-holder{
+	width: 100%;
+	height: auto;
+  	margin-bottom: 20px;
+	overflow: hidden;
+	background: @darkGrey;
+	& > p{
+	  text-align: center;
+	  padding: 20px;
+	  font-size: 1em;
+	  color: @rustGreen;
+	}
+  	&.error-active p{
+	  color: #990000;
+	}
+  	&.success-active p{
+	  color: @rustGreen;
+  	}
+}
 #private-office{
 	width: 100%;
 	max-width: 1200px;
@@ -75,13 +94,21 @@
 				}
 			}
 		}
+	  	.inner.payment-contacts{
+		  width: 100%;
+		  border-radius: 3px;
+		  & > p{
+			padding: 20px;
+			margin-bottom: 0;
+		  }
+		}
 	}
 }
 .subsribe-holder.subscribed{
 	.term{
 		display: block;
 		width: 100%;
-		font-size: 1.5em;
+		font-size: 1.25em;
 		color: @rustGreen;
 		text-align: center;
 		padding: 20px 40px;
@@ -186,12 +213,20 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	personal data  & password change end				*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
+p.error-message,
+p.notification-message{
+	text-align: center;
+	padding: 20px;
+	color: #990000 !important;
+	&.notification-message{
+	  	color: @rustGreen !important;
+	}
+}
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	adaptive private start									*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 @media only screen and(max-width: 800px){
-	
+
 	#private-office{
 		width: ~"calc(100% - 40px)";
 		max-width: 100%;
@@ -248,10 +283,10 @@
 			}
 		}
 	}
-	
+
 }
 @media only screen and(max-width: 500px){
-	
+
 	#private-office .library-holder{
 		.book{
 			width: 49%;
@@ -268,7 +303,7 @@
 
 }
 @media only screen and(max-width: 400px){
-	
+
 	#private-office .library-holder{
 		.book{
 			width: 100%;
@@ -285,5 +320,3 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	adaptive private end									*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-
