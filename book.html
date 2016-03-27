@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="format-detection" content="address=no">
 	<meta name="mobile-web-app-capable" content="yes">
@@ -33,13 +33,9 @@
 	<link rel="icon" type="image/png" href="assets/images/favicons/160x160.png">
 	<link rel="icon" type="image/png" href="assets/images/favicons/192x192.png"-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="build/css/home.bundle.min.css">
+	<link rel="stylesheet" href="build/css/book.bundle.min.css">
 </head>
 <body>
-	<!--
-		class: __logged-in
-		apply to: #page
-	-->
 	<div id="page">
 		<header id="header">
 			<div id="authorization-widget-holder">
@@ -64,26 +60,82 @@
 					<li class="touch-hover"><a href="index.html">Главная</a></li>
 					<li class="touch-hover"><a href="about.html">Автор</a></li>
 					<li class="touch-hover"><a href="stories.html">Рассказы</a></li>
-					<li class="touch-hover"><a href="books.html">Книги</a></li>
+					<li class="touch-hover active"><a href="books.html">Книги</a></li>
 				</ul>
 			</nav>
 		</header>
-		<main id="content">
-			<section class="outer intro-holder">
+		<main id="content" class="sticky-footer">
+			<article class="outer book-item-holder">
 				<div class="inner">
-					<span class="small-title">Сайт писателя</span>
-					<h1>Kamill Nurakhmetov</h1>
-					<p>Мыслей всегда больше, чем слов, слов всегда больше, чем дел, дела решают нашу судьбу!</p>
-					<div class="btn-large touch-hover auth-action" data-auth-action="authorization"><a href="#">Начать чтение</a></div>
-					<a href="#" class="under-btn touch-hover auth-action" title="зарегистрироваться" data-auth-action="registration">стать читателем</a>
+					<figure class="book-cover-holder">
+						<img src="build/images/book-covers/blood-type.jpg" alt="Группа Крови">
+					</figure>
+					<div class="book-info">
+						<h1>ГРУППА КРОВИ ЗДРАВОГО СМЫСЛА</h1>
+						<time datetime="2015-07-22">издание 2015 года</time>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati dolor veritatis, quos corporis rem quisquam sapiente placeat dolorum eius labore doloribus enim architecto aspernatur. Non ea, nesciunt pariatur illum optio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, odio aliquid est maxime harum debitis voluptatibus id quae ad in, laborum fugit nulla doloremque voluptates alias. Fugiat optio eum tenetur.</p>
+						<ul>
+							<li>
+								<p><span class="fa fa-reply"></span>5 рецензий</p>
+							</li>
+							<li>
+								<p><span class="fa fa-book"></span>73 прочтения</p>
+								
+							</li>
+							<li>
+								<p><span class="fa fa-file"></span>223 страницы</p>
+							</li>
+						</ul>
+						<a href="#">Прочесть вырезку из книги</a>
+						<div class="btn-price">
+							<a href="#">
+								<span class="label">Электронная версия</span>
+								<span class="price">99.00 uah</span>
+							</a>
+						</div>
+						<div class="btn-price">
+							<a href="#">
+								<span class="label">Бумажная версия</span>
+								<span class="price">199.00 uah</span>
+							</a>
+						</div>
+					</div>
 				</div>
-				<div class="mask left">
-					<img src="build/images/mask-left.png" alt="greek mask left" class="tilt-effect">
-				</div>
-				<div class="mask right">
-					<img src="build/images/mask-right.png" alt="greek mask right" class="tilt-effect">
-				</div>
-			</section>
+				<aside class="reviews-holder">
+					<h2>Отзывы о книге</h2>
+					<section class="comments-holder">
+						<article class="comment">
+							<h3><span class="fa fa-comment"></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+							<time datetime="2015-08-13">13 августа 2015г.</time>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea sed ab iusto eveniet recusandae commodi, velit iste nisi fuga. Expedita et saepe molestiae, sed consectetur rerum aut modi, distinctio aliquam!</p>
+						</article>
+						<article class="comment">
+							<h3><span class="fa fa-comment"></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+							<time datetime="2015-08-13">13 августа 2015г.</time>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea sed ab iusto eveniet recusandae commodi, velit iste nisi fuga. Expedita et saepe molestiae, sed consectetur rerum aut modi, distinctio aliquam!</p>
+						</article>
+						<article class="comment">
+							<h3><span class="fa fa-comment"></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+							<time datetime="2015-08-13">13 августа 2015г.</time>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea sed ab iusto eveniet recusandae commodi, velit iste nisi fuga. Expedita et saepe molestiae, sed consectetur rerum aut modi, distinctio aliquam!</p>
+						</article>
+						<article class="comment">
+							<h3><span class="fa fa-comment"></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+							<time datetime="2015-08-13">13 августа 2015г.</time>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea sed ab iusto eveniet recusandae commodi, velit iste nisi fuga. Expedita et saepe molestiae, sed consectetur rerum aut modi, distinctio aliquam!</p>
+						</article>
+					</section>
+					<form action="php/review.php" method="POST" id="review-form">
+						<div class="field-holder">
+							<textarea name="review[message]" placeholder="Напишите Ваш отзыв тут" data-rule-required="true" data-msg-required="Это поле должно быть заполнено"></textarea>
+						</div>
+						<button type="submit">
+							<span>Отправить</span>
+						</button>
+					</form>
+					<div id="response-holder"></div>
+				</aside>
+			</article>
 		</main>
 		<div id="authorization-holder">
 			<section class="inner authorization active">
@@ -195,14 +247,17 @@
 		<span class="fa fa-mobile"></span>
 		<span class="entitled">Turn it back to portrait orientation</span>
 	</div>
-	<footer id="footer">
+	<footer id="footer" class="sticky">
+		<div class="cheers-logo">
+			<a href="#"><img src="build/images/cheers-logo.png" alt="CHEERS! Unlimited web agency"></a>
+		</div>
 		<small>© 2015. All rights reserved. Created and Designed by <a href="#">CHEERS! Unlimited</a> web-agency.</small>
 		<div class="feedback-btn"><a href="#" class="fa fa-envelope-o" title="отправить письмо"></a></div>
 	</footer>
 	<script src="jspm_packages/system.js"></script>
     <script src="jspm.config.js"></script>
     <script>
-        System.import("assets/js/app/home.js");
+        System.import("assets/js/app/books.js");
     </script>
 </body>
 </html>

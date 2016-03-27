@@ -27,13 +27,13 @@ export default class ReviewController{
             response = JSON.parse(response);
 
             this.el.addClass("hide");
-            this.responseHolder.html("<h3 class='success'>"+ response.message +"</h3>");
             this.el[0].reset();
+            this.responseHolder.html("<h3 class='success'>"+ response.message +"</h3>");
         })
         .fail((error) => {
             this.el.addClass("hide");
-            this.responseHolder.html("<h3 class='error'>"+ error.responseText +"</h3>");
             this.el[0].reset();
+            this.responseHolder.html("<h3 class='error'>"+ error.responseText +"</h3>");
         });
 
     }

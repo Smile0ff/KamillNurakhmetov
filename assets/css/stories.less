@@ -1,8 +1,9 @@
 @import "components/common.less";
+@import "components/forms.less";
 @import "components/reviews.less";
 @import "components/authorization.less";
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	layout start												*/
+/*	layout start							  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #content{
     h1{
@@ -50,11 +51,11 @@
 	}
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	layout end												*/
+/*	layout end								  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	sort holder start										*/
+/*	sort holder start					      */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .sort-panel-holder{
 	width: 100%;
@@ -143,11 +144,11 @@
 	}
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	sort holder start										*/
+/*	sort holder start						  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	stories start											*/
+/*	stories start							  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .stories-list-holder{
     width: 100%;
@@ -237,6 +238,10 @@
 				background-size: 60px auto;
 				overflow: hidden;
 			}
+            & > p{
+                padding: 10px 10%;
+                color: @baseCream;
+            }
             .btn-small{
                 a{
                     position: relative;
@@ -260,25 +265,7 @@
 					color: @rustGreen;
 				}
 			}
-		}
-		&.disabled{
-			.btn-small{
-                a{
-                    background: @darkGrey;
-                    pointer-events: none;
-                    box-shadow: none;
-                    color: @darkGrey;
-                    user-select: none;
-                    &:before{
-                        display: block;
-                        color: @rustGreen;
-                        font-size: 2em;
-                    }
-                    &:after{
-                        background: @darkGrey;
-                    }
-                }
-            }
+
 		}
 	}
 }

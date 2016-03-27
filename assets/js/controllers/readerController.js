@@ -50,7 +50,7 @@ export default class ReaderController{
 		this.wrapper.addClass("loading");
 		target.siblings(".contents-item").removeClass("active");
 
-        $.get(path, {id: contentsID}).done((response) => {
+        $.get(path, {contentsId: contentsID}).done((response) => {
             response = JSON.parse(response);
 
 			this.wrapper.removeClass("loading contents-active");

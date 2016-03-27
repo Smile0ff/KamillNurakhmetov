@@ -15,7 +15,11 @@ export default class StoriesController{
     }
     openReviews(e){
         if(this.reviewHolder.hasClass("active")) return;
-		let storieID = $(e.currentTarget).data("storie-id");
+		let storieID = $(e.currentTarget).data("storie-id"),
+            isFormVisible = $(e.currentTarget).data("form-visible");
+
+        isFormVisible ? this.reviewHolder.removeClass("no-form") : this.reviewHolder.addClass("no-form");
+
 		this.reviewHolder
 			.addClass("active")
 			.find(".storie-id-" + storieID)

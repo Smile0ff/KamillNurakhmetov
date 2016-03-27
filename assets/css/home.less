@@ -1,5 +1,5 @@
 @import "components/common.less";
-@import "components/hero-header.less";
+@import "components/forms.less";
 @import "components/authorization.less";
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	layout start							  */
@@ -19,6 +19,18 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	header start	 						  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#header{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	header end								  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	intro start								  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .outer.intro-holder{
@@ -27,7 +39,10 @@
 	background-size: 200px 55px;
 	.inner,
 	.mask{
-		.centered(0%, 50%, 0%, -50%);
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
 	}
 	.inner{
 		z-index: 5;
@@ -35,7 +50,7 @@
 			font-family: @exmouth;
 			text-align: center;
 		}
-		h2{
+		& > p{
 			margin-top: -10px;
 			padding: 0 28%;
 		}
@@ -82,11 +97,11 @@
 	}
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	intro end												*/
+/*	intro end							      */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	footer start												*/
+/*	footer start							  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #footer{
 	position: absolute;
@@ -95,62 +110,60 @@
 	z-index: 20;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	footer end												*/
+/*	footer end								  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	adaptive start											*/
+/*	adaptive start							  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-@media only screen and(max-width: 1024px){
+@media only screen and @laptop{
 
 	.outer.intro-holder{
 		.inner{
-			h2{ padding: 0 15%; }
+			& > p{ padding: 0 15%; }
 		}
 	}
 
 }
-@media only screen and(max-width: 768px){
+@media only screen and @tablet{
 
 	.outer.intro-holder{
 		.inner{
-			h2{ padding: 0 10%; }
+			& > p{ padding: 0 10%; }
 		}
 		.mask{ display: none; }
 	}
 
 }
-@media only screen and(max-width: 640px) and(orientation: portrait){
+@media only screen and @mobileL{
 
 	.outer.intro-holder{
 		background: @baseCream url(../images/ornament-bottom.png) no-repeat 50% calc(~"100% - 50px");
 		background-size: 130px 35px;
 		.inner{
-			h1{ font-size: 4.5em; }
-			h2{ font-size: 1em; }
 			.small-title{ display: none; }
+			h1{
+				font-size: 4.5em;
+				padding-top: 80px;
+			}
+			& > p{ font-size: 1em; }
+			.btn-large{
+				margin: 20px auto;
+			}
 		}
 	}
 
 }
 
-@media only screen and(max-width: 500px){
+@media only screen and @mobileM{
 
 	.outer.intro-holder{
 		.inner{
-			h1{ font-size: 3.5em; }
-			h2{
-				margin-top: -5px;
-				font-size: 0.875em;
-			}
-			.btn-large{ margin: 40px auto 10px; }
+			h1{ font-size: 3em; }
+			& > p{ display: none; }
 		}
 	}
-	.btn-large{
-		width: 180px;
-		height: 40px;
-		a{ line-height: 40px; }
-	}
+
 	#footer{
 		small{
 			display: none;
@@ -170,41 +183,21 @@
 				&:hover{
 					color: @rustGreen;
 				}
+
 			}
 		}
 	}
 
 }
-@media only screen and(max-width: 400px){
-
-	.outer.intro-holder{
-		.inner{
-			margin-top: 20px;
-			h1{ font-size: 3em; }
-			h2{
-				margin-top: 0px;
-				font-size: 0.875em;
-			}
-			.small-title{ display: none; }
-			.btn-large{ margin: 40px auto 10px; }
-		}
-	}
-
-}
-@media only screen and(max-width: 360px){
+@media only screen and @mobileS{
 
 	.outer.intro-holder{
 		.inner{
 			h1{ font-size: 2.75em; }
-			h2{
-				padding: 0 20px;
-			}
-			.small-title{ display: none; }
-			.btn-large{ margin: 20px auto 10px; }
 		}
 	}
 
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	adaptive end											*/
+/*	adaptive end							  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

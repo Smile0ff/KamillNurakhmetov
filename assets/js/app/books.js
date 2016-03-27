@@ -3,17 +3,16 @@
 import jquery from "jquery";
 import validate from "jquery-validation";
 import touchHover from "../lib/emulateTouchHover";
-import ToggleInput from "../lib/ToggleInput";
+import ToggleInput from "../lib/toggleInput";
 import AuthController from "../controllers/authController";
-import BookController from "../controllers/bookController";
 import ReviewController from "../controllers/reviewController";
+import SeoText from "../lib/seoText";
 
 $(function(){
-
-    new BookController();
     new ReviewController();
     new ToggleInput();
     new AuthController();
+    new SeoText();
 
     $("form").validate();
 });

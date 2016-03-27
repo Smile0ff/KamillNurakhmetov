@@ -1,5 +1,5 @@
 System.config({
-  baseURL: "/Writer/",
+  baseURL: "/",
   defaultJSExtensions: true,
   transpiler: "babel",
   babelOptions: {
