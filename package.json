@@ -20,6 +20,7 @@
     "configFile": "jspm.config.js",
     "dependencies": {
       "jquery": "github:components/jquery@^2.1.4",
+      "jquery-mask-plugin": "npm:jquery-mask-plugin@^1.13.9",
       "jquery-validation": "github:jzaefferer/jquery-validation@^1.14.0"
     },
     "devDependencies": {

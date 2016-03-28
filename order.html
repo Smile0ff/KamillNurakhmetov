@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Blank</title>
+	<meta charset="UTF-8">
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="address=no">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="apple-mobile-web-app-title" content="">
+	<meta http-equiv="cleartype" content="on">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta name="Description" content="Описание необходимых мета-тегов." />
+	<!--meta name="msapplication-TileImage" content="assets/images/favicons/ms/144x144.png">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<link rel="apple-touch-icon" href="assets/images/favicons/apple/57x57.png">
+	<link rel="apple-touch-icon" href="assets/images/favicons/apple/60x60.png">
+	<link rel="apple-touch-icon" href="assets/images/favicons/apple/72x72.png">
+	<link rel="apple-touch-icon" href="assets/images/favicons/apple/76x76.png">
+	<link rel="apple-touch-icon" href="assets/images/favicons/apple/76x76.png">
+	<link rel="apple-touch-icon" href="assets/images/favicons/apple/114x114.png">
+	<link rel="apple-touch-icon" href="assets/images/favicons/apple/120x120.png">
+	<link rel="apple-touch-icon" href="assets/images/favicons/apple/144x144.png">
+	<link rel="apple-touch-icon" href="assets/images/favicons/apple/152x152.png">
+	<link rel="apple-touch-icon" href="assets/images/favicons/apple/180x180.png">
+	<link rel="icon" type="image/png" href="assets/images/favicons/16x16.png">
+	<link rel="icon" type="image/png" href="assets/images/favicons/32x32.png">
+	<link rel="icon" type="image/png" href="assets/images/favicons/96x96.png">
+	<link rel="icon" type="image/png" href="assets/images/favicons/160x160.png">
+	<link rel="icon" type="image/png" href="assets/images/favicons/192x192.png"-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="build/css/order.bundle.min.css">
+</head>
+<body>
+	<div id="page">
+		<header id="header">
+			<div id="authorization-widget-holder">
+				<ul class="authorization out">
+					<li class="active">
+						<a href="#" class="touch-hover">корзина пуста<span class="fa fa-shopping-basket"></span></a>
+					</li>
+					<li><a href="#" class="touch-hover auth-action" data-auth-action="authorization">Войти</a></li>
+					<li><a href="#" class="touch-hover auth-action" data-auth-action="registration">Регистарция</a></li>
+				</ul>
+				<ul class="authorization in">
+					<li><a href="#" class="touch-hover">корзина пуста<span class="fa fa-shopping-basket"></span></a></li>
+					<li><a href="#" class="user-email touch-hover">test-user-email@gmail.com</a></li>
+					<li><a href="#" class="touch-hover fa fa-sign-out"></a></li>
+				</ul>
+			</div>
+			<div class="logo">
+				<a href="#"><img src="build/images/logo.png" alt="Kamill Nurakhmetov"></a>
+			</div>
+			<nav id="menu">
+				<ul>
+					<li class="touch-hover"><a href="index.html">Главная</a></li>
+					<li class="touch-hover"><a href="about.html">Автор</a></li>
+					<li class="touch-hover"><a href="stories.html">Рассказы</a></li>
+					<li class="touch-hover"><a href="books.html">Книги</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main id="content" class="sticky-footer">
+			<h1>Корзина</h1>
+			<div class="outer" id="basket-holder">
+				<div class="inner">
+					<!--p class="empty">Ваша корзина пуста</p-->
+					<section class="grid">
+						<article class="cell basket-item">
+							<figure>
+								<img src="build/images/book-covers/blood-type.jpg" alt="">
+							</figure>
+							<div class="info">
+								<span class="upper-title">бумажная версия</span>
+								<h2>Группа крови здравого смысла</h2>
+								<time datetime="2015-07-22">издание 2015 года</time>
+							</div>
+							<div class="counter-holder">
+								<span class="counter-btn fa fa-plus" data-count-type="increase"></span>
+								<span class="quantity">1</span>
+								<span class="counter-btn fa fa-minus" data-count-type="decrease"></span>
+							</div>
+							<div class="price-holder">
+								<p><span class="price" data-original-price="200.25">200.25</span> uah</p>
+							</div>
+							<div class="delete">
+								<a href="#" class="fa fa-times"></a>
+							</div>
+						</article>
+						<article class="cell basket-item">
+							<figure>
+								<img src="build/images/book-covers/blood-type.jpg" alt="">
+							</figure>
+							<div class="info">
+								<span class="upper-title">бумажная версия</span>
+								<h2>Группа крови здравого смысла</h2>
+								<time datetime="2015-07-22">издание 2015 года</time>
+							</div>
+							<div class="counter-holder">
+								<span class="counter-btn fa fa-plus" data-count-type="increase"></span>
+								<span class="quantity">1</span>
+								<span class="counter-btn fa fa-minus" data-count-type="decrease"></span>
+							</div>
+							<div class="price-holder">
+								<p><span class="price" data-original-price="100.50">100.50</span> uah</p>
+							</div>
+							<div class="delete">
+								<a href="#" class="fa fa-times"></a>
+							</div>
+						</article>
+					</section>
+					<section class="order-holder">
+						<h2>Форма заказа</h2>
+						<div class="inner">
+							<form action="#" method="POST" id="order-form">
+								<div class="field-holder">
+									<input type="text" name="order[fio]" value="" data-rule-required="true" data-msg-required="Данное поле обязательно к заполнению" id="order-fio" class="toggle-input">
+									<label for="order-fio">
+										<span class="icon-holder"><span class="icon fa fa-pencil"></span></span>
+										<span class="title">Ваше ФИО</span>
+									</label>
+								</div>
+								<div class="field-holder">
+									<input type="tel" name="order[phone]" value="" data-rule-required="true" data-msg-required="Данное поле обязательно к заполнению" id="order-phone" class="toggle-input" data-mask="+99 (999) 999 9999">
+									<label for="order-phone">
+										<span class="icon-holder"><span class="icon fa fa-pencil"></span></span>
+										<span class="title">Ваш телефон</span>
+									</label>
+								</div>
+								<div class="field-holder several">
+									<p>Выберите службу доставки</p>
+									<div class="field-holder">
+										<input type="radio" name="order[service]" value="DHL" id="dhl" checked="true">
+										<label for="dhl"><span class="radio">DHL</span></label>
+									</div>
+									<div class="field-holder">
+										<input type="radio" name="order[service]" value="NP" id="np">
+										<label for="np"><span class="radio">Новая Почта</span></label>
+									</div>
+								</div>
+								<div class="field-holder">
+									<input type="text" name="order[office_num]" value="" data-rule-required="true" data-msg-required="Введите номер отделения" data-rule-number="true" data-msg-number="только цифры" id="order-office-number" class="toggle-input">
+									<label for="order-office-number">
+										<span class="icon-holder"><span class="icon fa fa-pencil"></span></span>
+										<span class="title">Введите номер отделения</span>
+									</label>
+								</div>
+								<input type="hidden" name="order[price]" value="" id="order-total-price">
+								<div class="total-price-holder">
+									<p>Общая стоимость <span id="total-price">300.75</span> UAH</p>
+								</div>
+								<button type="submit">
+									<span>Заказать</span>
+								</button>
+							</form>
+						</div>
+					</section>
+				</div>
+			</div>
+		</main>
+		<div id="authorization-holder">
+			<section class="inner authorization active">
+				<h2>Авторизация</h2>
+				<p>вход в личный кабинет</p>
+				<form action="#" method="POST" id="auth-form">
+					<div class="field-holder">
+						<input type="email" name="auth[email]" value="" id="auth-email" class="toggle-input" data-rule-required="true" data-msg-required="Вы забыли ввести электронный адрес" data-rule-email="true" data-msg-email="Ваш электронный адрес не корректен">
+						<label for="auth-email">
+							<span class="icon-holder"><span class="icon fa fa-pencil"></span></span>
+							<span class="title">Ваш электронный адрес</span>
+						</label>
+					</div>
+					<div class="field-holder">
+						<input type="password" name="auth[password]" value="" id="auth-password" class="toggle-input" data-rule-required="true" data-msg-required="Вы не ввели пароль">
+						<label for="auth-password">
+							<span class="icon-holder"><span class="icon fa fa-pencil"></span></span>
+							<span class="title">Введите ваш пароль</span>
+						</label>
+					</div>
+					<button type="submit">
+						<span>Войти</span>
+					</button>
+				</form>
+				<div class="auth-action-holder">
+					<a href="#" class="auth-action" data-auth-action="reset">забыли пароль?</a>
+					<a href="#" class="auth-action" data-auth-action="registration">создать аккаунт</a>
+				</div>
+				<div class="close-holder">
+					<span class="fa fa-times"></span>
+				</div>
+			</section>
+			<section class="inner registration">
+				<h2>Регистрация</h2>
+				<p>станьте читателем</p>
+				<form action="#" method="POST" id="registration-form">
+					<div class="field-holder">
+						<input type="email" name="registration[email]" value="" id="registration-email" class="toggle-input" data-rule-required="true" data-msg-required="Вы забыли ввести электронный адрес" data-rule-email="true" data-msg-email="Ваш электронный адрес не корректен">
+						<label for="registration-email">
+							<span class="icon-holder"><span class="icon fa fa-pencil"></span></span>
+							<span class="title">Ваш электронный адрес</span>
+						</label>
+					</div>
+					<div class="field-holder">
+						<input type="password" name="registration[password]" value="" id="registration-password" class="toggle-input" data-rule-required="true" data-msg-required="Вы забыли ввести пароль">
+						<label for="registration-password">
+							<span class="icon-holder"><span class="icon fa fa-pencil"></span></span>
+							<span class="title">Введите ваш пароль</span>
+						</label>
+					</div>
+					<div class="field-holder">
+						<input type="password" name="registration[confirm-password]" value="" id="registration-confirm-password" class="toggle-input" data-rule-required="true" data-msg-required="Вы забыли подтвердить ваш пароль">
+						<label for="registration-confirm-password">
+							<span class="icon-holder"><span class="icon fa fa-pencil"></span></span>
+							<span class="title">Повторите пароль</span>
+						</label>
+					</div>
+					<div class="row">
+						<p>Выбирите желаюмую валюту для покупок</p>
+						<div class="field-holder">
+							<input type="radio" name="registration[currency]" value="USD" id="registration-currency-usd" checked="true">
+							<label for="registration-currency-usd"><span class="radio">USD</span></label>
+						</div>
+						<div class="field-holder">
+							<input type="radio" name="registration[currency]" value="UAH" id="registration-currency-uah">
+							<label for="registration-currency-uah"><span class="radio">UAH</span></label>
+						</div>
+						<div class="field-holder">
+							<input type="radio" name="registration[currency]" value="RUB" id="registration-currency-rub">
+							<label for="registration-currency-rub"><span class="radio">RUB</span></label>
+						</div>
+					</div>
+					<button type="submit">
+						<span>Войти</span>
+					</button>
+				</form>
+				<div class="auth-action-holder">
+					<a href="#" class="auth-action" data-auth-action="authorization">есть аккаунт? Войти</a>
+				</div>
+				<div class="close-holder">
+					<span class="fa fa-times"></span>
+				</div>
+			</section>
+			<section class="inner reset">
+				<h2>Восстановление</h2>
+				<p>Восстановите ваш пароль</p>
+				<form action="#" method="POST" id="reset-password-form">
+					<div class="field-holder">
+						<input type="email" name="reset_password[email]" value="" id="reset-password-email" class="toggle-input" data-rule-required="true" data-msg-required="Вы забыли ввести электронный адрес" data-rule-email="true" data-msg-email="Ваш электронный адрес не корректен">
+						<label for="reset-password-email">
+							<span class="icon-holder"><span class="icon fa fa-pencil"></span></span>
+							<span class="title">Ваш электронный адрес</span>
+						</label>
+					</div>
+					<button type="submit">
+						<span>Войти</span>
+					</button>
+				</form>
+				<div class="auth-action-holder">
+					<a href="#" class="auth-action" data-auth-action="authorization">Войти</a>
+				</div>
+				<div class="close-holder">
+					<span class="fa fa-times"></span>
+				</div>
+			</section>
+		</div>
+	</div>
+	<div id="orientation-landscape-holder">
+		<span class="fa fa-mobile"></span>
+		<span class="entitled">Turn it back to portrait orientation</span>
+	</div>
+	<footer id="footer" class="sticky">
+		<div class="cheers-logo">
+			<a href="#"><img src="build/images/cheers-logo.png" alt="CHEERS! Unlimited web agency"></a>
+		</div>
+		<small>© 2015. All rights reserved. Created and Designed by <a href="#">CHEERS! Unlimited</a> web-agency.</small>
+		<div class="feedback-btn"><a href="#" class="fa fa-envelope-o" title="отправить письмо"></a></div>
+	</footer>
+	<script src="jspm_packages/system.js"></script>
+    <script src="jspm.config.js"></script>
+    <script>
+        System.import("assets/js/app/order.js");
+    </script>
+</body>
+</html>
